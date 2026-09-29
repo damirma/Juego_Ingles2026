@@ -153,6 +153,8 @@ let teams = [];
 let currentClueIndex = 0;
 let currentPoints = 100; // fixed value per clue, kept simple on purpose
 let clueResolved = false; // guards against double-award / double-unlock on one clue
+let caseClosed = false; // guards against changing the accusation or double-awarding the bonus
+const SOLVE_BONUS = 300;
 const revealedCountBySuspect = {};
 
 const setupScreen = document.getElementById("setup-screen");
@@ -182,6 +184,10 @@ const accusationModal = document.getElementById("accusation-modal");
 const accusationSuspects = document.getElementById("accusation-suspects");
 const accusationFeedback = document.getElementById("accusation-feedback");
 const playAgainBtn = document.getElementById("play-again-btn");
+const bonusSection = document.getElementById("bonus-section");
+const bonusButtons = document.getElementById("bonus-buttons");
+const noBonusBtn = document.getElementById("no-bonus-btn");
+const finalScores = document.getElementById("final-scores");
 
 // ---------- SETUP ----------
 
@@ -373,6 +379,7 @@ function openAccusation() {
 }
 
 function makeAccusation(suspectId) {
+  if (caseClosed) return;
   const result = ACCUSATION_FEEDBACK[suspectId];
 
   accusationFeedback.textContent = result.text;
@@ -380,8 +387,52 @@ function makeAccusation(suspectId) {
   accusationFeedback.classList.remove("hidden");
 
   if (result.correct) {
-    playAgainBtn.classList.remove("hidden");
+    caseClosed = true;
+    accusationSuspects.classList.add("closed");
+    showBonusSection();
   }
+}
+
+// ---------- SOLVE BONUS & FINAL SCORE ----------
+
+function showBonusSection() {
+  bonusButtons.innerHTML = "";
+  teams.forEach((team, i) => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.textContent = team.name;
+    btn.addEventListener("click", () => awardBonus(i));
+    bonusButtons.appendChild(btn);
+  });
+  bonusSection.classList.remove("hidden");
+}
+
+function awardBonus(teamIndex) {
+  if (bonusSection.classList.contains("hidden")) return;
+  teams[teamIndex].score += SOLVE_BONUS;
+  updateScoreboard();
+  showFinalScore();
+}
+
+noBonusBtn.addEventListener("click", () => showFinalScore());
+
+function showFinalScore() {
+  bonusSection.classList.add("hidden");
+  const sorted = [...teams].sort((a, b) => b.score - a.score);
+  finalScores.innerHTML =
+    `<h3>🏆 Final Score</h3>` +
+    sorted
+      .map(
+        (team, i) => `
+      <div class="final-row">
+        <span>${i === 0 ? "🏆 " : ""}${escapeHtml(team.name)}</span>
+        <span>${team.score} pts</span>
+      </div>
+    `
+      )
+      .join("");
+  finalScores.classList.remove("hidden");
+  playAgainBtn.classList.remove("hidden");
 }
 
 // ---------- HELPERS ----------

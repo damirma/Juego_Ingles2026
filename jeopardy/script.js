@@ -243,6 +243,10 @@ function closeQuestion() {
 // ---------- FINAL SCORE ----------
 
 function showFinalScore() {
+  // game over: no team has the turn anymore
+  document.querySelectorAll(".score-card").forEach((card) => card.classList.remove("active-turn"));
+  turnIndicatorEl.textContent = "🏁 Game over!";
+
   const sorted = [...teams].sort((a, b) => b.score - a.score);
   finalScores.innerHTML = sorted
     .map(

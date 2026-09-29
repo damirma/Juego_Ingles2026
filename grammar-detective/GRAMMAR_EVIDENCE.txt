@@ -31,7 +31,8 @@ alibi) or stays SUSPICIOUS. Only one suspect remains suspicious after all
 7. When all 8 clues are unlocked, only one suspect should still be
    ⚠️ Suspicious. Click that suspect's card in the final screen to accuse
    them and close the case.
-8. The team that solves the case correctly wins bonus points, but everyone
+8. The team that solves the case correctly wins 300 bonus points (the
+   teacher picks the team in the final screen), but everyone
    is invited to guess.
 
 4. LIST OF GRAMMAR QUESTIONS / CHALLENGES

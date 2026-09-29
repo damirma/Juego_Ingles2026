@@ -35,7 +35,7 @@
         <li>Award the point to the team that answered correctly (or press "No one got it" — the clue unlocks either way, so the case keeps moving).</li>
         <li>Press "Next Clue" to continue. Each suspect has 2 clues — once both are revealed, watch the Suspects panel: that suspect turns ✅ Cleared or ⚠️ Suspicious.</li>
         <li>When all 8 clues are unlocked, only one suspect should still be ⚠️ Suspicious. Click that suspect's card to close the case.</li>
-        <li>The team that solves the case correctly wins bonus points — but everyone can guess!</li>
+        <li>The team that solves the case correctly wins 300 bonus points — but everyone can guess!</li>
       </ol>
     </details>
   </section>
@@ -99,6 +99,12 @@
       <p>Review the case file and the suspects, then choose who stole the trophy.</p>
       <div id="accusation-suspects" class="accusation-suspects"></div>
       <div id="accusation-feedback" class="accusation-feedback hidden"></div>
+      <div id="bonus-section" class="bonus-section hidden">
+        <p class="award-label">Which team solved the case? (+300 bonus points)</p>
+        <div id="bonus-buttons" class="award-buttons"></div>
+        <button id="no-bonus-btn" class="btn secondary">No team</button>
+      </div>
+      <div id="final-scores" class="final-scores hidden"></div>
       <button id="play-again-btn" class="btn primary hidden">Play again</button>
     </div>
   </div>

@@ -194,7 +194,8 @@ body {
 
 .award-buttons .btn { background: var(--green); color: var(--white); }
 
-#no-one-btn {
+#no-one-btn,
+#no-bonus-btn {
   background: var(--panel-light);
   border: none;
   color: var(--white);
@@ -377,6 +378,31 @@ body {
 
 .accusation-feedback.correct { border-left: 4px solid var(--green); }
 .accusation-feedback.wrong { border-left: 4px solid var(--accent); }
+
+.bonus-section .award-buttons { justify-content: center; }
+
+.accusation-suspects.closed .suspect-card { cursor: default; }
+.accusation-suspects.closed .suspect-card:hover { border-color: transparent; }
+
+.final-scores {
+  text-align: left;
+  background: var(--panel-light);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.final-scores h3 { margin: 0 0 8px; text-align: center; }
+
+.final-scores .final-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--panel);
+  font-size: 1.1rem;
+}
+
+.final-scores .final-row:last-child { border-bottom: none; }
 
 @media (max-width: 640px) {
   .app-header h1 { font-size: 1.5rem; }
