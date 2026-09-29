@@ -1,19 +1,26 @@
-# Grammar Jeopardy — Used To & Passive Voice
+# Juego_Ingles2026 — Grammar Games
 
-Juego interactivo en inglés para practicar "used to" y la voz pasiva
-(presente y pasado). Proyecto de la clase de inglés.
+Juegos interactivos en inglés para practicar "used to" y la voz pasiva
+(presente y pasado). Proyectos de la clase de inglés.
 
-## Cómo jugar
-Abre `index.html` en el navegador (o entra al link de GitHub Pages una
-vez esté activado), agrega de 2 a 4 equipos y presiona "Start Game".
+## Grammar Jeopardy — Used To & Passive Voice
 
-## Jugarlo en línea
-Una vez GitHub Pages esté activado en este repo, el juego estará en:
-https://damirma.github.io/Juego_Ingles2026/
+Tablero estilo Jeopardy: los equipos eligen categoría y valor en puntos.
 
-## Archivos
-- `index.html` — estructura de la página.
-- `style.css` — estilos del tablero tipo Jeopardy.
-- `script.js` — lógica del juego (equipos, tablero, puntajes, preguntas).
-- `GRAMMAR_EVIDENCE.txt` — evidencia requerida por la actividad (objetivo,
-  reglas, preguntas, respuestas, justificación gramatical).
+- Abre `index.html` en el navegador, agrega de 2 a 4 equipos y presiona
+  "Start Game".
+- En línea (con GitHub Pages activado):
+  https://damirma.github.io/Juego_Ingles2026/
+- Archivos: `index.html`, `style.css`, `script.js`, `GRAMMAR_EVIDENCE.txt`.
+
+## Grammar Detective Agency — The Case of the Missing Debate Trophy
+
+Juego de misterio: los equipos resuelven pistas de gramática para
+desbloquear evidencia y descubrir quién robó el trofeo.
+
+- Abre `grammar-detective/index.html` en el navegador, agrega de 2 a 4
+  equipos y presiona "Start the Investigation".
+- En línea (con GitHub Pages activado):
+  https://damirma.github.io/Juego_Ingles2026/grammar-detective/
+- Archivos: `grammar-detective/index.html`, `grammar-detective/style.css`,
+  `grammar-detective/script.js`, `grammar-detective/GRAMMAR_EVIDENCE.txt`.

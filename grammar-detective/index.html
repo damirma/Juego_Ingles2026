@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Detective Agency: Used To &amp; Passive Voice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>🕵️ Grammar Detective Agency</h1>
+    <p class="subtitle">The Case of the Missing Debate Trophy</p>
+  </header>
+
+  <!-- SETUP SCREEN -->
+  <section id="setup-screen" class="screen">
+    <h2>Open the case file</h2>
+    <p>Enter a name for each detective team (2 to 4 teams). Then start the investigation.</p>
+    <div class="team-inputs" id="team-inputs">
+      <input type="text" class="team-name-input" placeholder="Team 1 name" value="Team 1">
+      <input type="text" class="team-name-input" placeholder="Team 2 name" value="Team 2">
+    </div>
+    <div class="setup-buttons">
+      <button id="add-team-btn" class="btn secondary">+ Add team</button>
+      <button id="start-game-btn" class="btn primary">Start the Investigation</button>
+    </div>
+    <details class="rules-details">
+      <summary>How to play (rules)</summary>
+      <ol>
+        <li>Split the class into 2–4 detective teams.</li>
+        <li>Read the case introduction and the list of suspects out loud.</li>
+        <li>Read each grammar clue out loud, one at a time, in order.</li>
+        <li>Teams try to answer using the correct grammar. Press "Reveal Answer" to check.</li>
+        <li>Award the point to the team that answered correctly (or press "No one got it" — the clue unlocks either way, so the case keeps moving).</li>
+        <li>Press "Next Clue" to continue until all 8 clues are unlocked.</li>
+        <li>When the case file is complete, look at the suspects and the evidence together, then choose who committed the theft.</li>
+        <li>The team that solves the case correctly wins bonus points — but everyone can guess!</li>
+      </ol>
+    </details>
+  </section>
+
+  <!-- CASE SCREEN -->
+  <section id="case-screen" class="screen hidden">
+    <div class="scoreboard" id="scoreboard"></div>
+
+    <div class="case-layout">
+      <div class="case-main">
+        <p class="progress-label" id="progress-label">Clue 1 of 8</p>
+
+        <div class="clue-card">
+          <p class="clue-category" id="clue-category"></p>
+          <p class="clue-question" id="clue-question"></p>
+
+          <button id="show-answer-btn" class="btn primary">Reveal Answer</button>
+
+          <div id="answer-block" class="hidden">
+            <p class="answer-label">Correct answer:</p>
+            <p class="answer-text" id="answer-text"></p>
+
+            <p class="award-label">Which team got it right?</p>
+            <div id="award-buttons" class="award-buttons"></div>
+            <button id="no-one-btn" class="btn secondary">No one got it</button>
+
+            <div id="unlock-block" class="unlock-block hidden">
+              <p class="unlock-label">🔓 New clue unlocked:</p>
+              <p class="unlock-text" id="unlock-text"></p>
+              <button id="next-clue-btn" class="btn primary">Next Clue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="case-sidebar">
+        <div class="sidebar-block">
+          <h3>👥 Suspects</h3>
+          <div id="suspects-list" class="suspects-list"></div>
+        </div>
+        <div class="sidebar-block">
+          <h3>📋 Case File</h3>
+          <ul id="case-file-list" class="case-file-list">
+            <li class="empty-note">No clues yet. Solve the first question to begin.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="game-controls">
+      <button id="reset-game-btn" class="btn secondary">Restart game</button>
+    </div>
+  </section>
+
+  <!-- ACCUSATION MODAL -->
+  <div id="accusation-modal" class="modal hidden">
+    <div class="modal-content wide">
+      <h2>🔍 Who did it?</h2>
+      <p>Review the case file and the suspects, then choose who stole the trophy.</p>
+      <div id="accusation-suspects" class="accusation-suspects"></div>
+      <div id="accusation-feedback" class="accusation-feedback hidden"></div>
+      <button id="play-again-btn" class="btn primary hidden">Play again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
