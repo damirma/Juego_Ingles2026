@@ -3,90 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grammar Jeopardy: Used To &amp; Passive Voice</title>
-<link rel="stylesheet" href="style.css">
+<title>Grammar Games: Used To &amp; Passive Voice</title>
+<style>
+  :root {
+    --bg: #12141c;
+    --panel: #1d2130;
+    --accent: #e8b84b;
+    --text: #f3f1ea;
+    --muted: #a9adbd;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Verdana, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header { text-align: center; padding: 40px 16px 8px; }
+  header h1 { margin: 0; font-size: 2.2rem; }
+  header p { margin: 8px 0 0; color: var(--muted); }
+  main {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .game-card {
+    display: block;
+    padding: 24px;
+    background: var(--panel);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .game-card:hover, .game-card:focus-visible {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    outline: none;
+  }
+  .game-card .icon { font-size: 2.5rem; }
+  .game-card h2 { margin: 8px 0 4px; }
+  .game-card p { margin: 0; color: var(--muted); line-height: 1.4; }
+  .game-card .play { display: inline-block; margin-top: 16px; color: var(--accent); font-weight: 600; }
+</style>
 </head>
 <body>
-
-  <header class="app-header">
-    <h1>🎓 Grammar Jeopardy</h1>
-    <p class="subtitle">Used To &amp; Passive Voice Challenge</p>
+  <header>
+    <h1>🎲 Grammar Games</h1>
+    <p>Practice "used to" and the passive voice (present &amp; past)</p>
   </header>
 
-  <!-- SETUP SCREEN -->
-  <section id="setup-screen" class="screen">
-    <h2>Set up your teams</h2>
-    <p>Enter a name for each team (2 to 4 teams). Then press Start Game.</p>
-    <div class="team-inputs" id="team-inputs">
-      <input type="text" class="team-name-input" placeholder="Team 1 name" value="Team 1">
-      <input type="text" class="team-name-input" placeholder="Team 2 name" value="Team 2">
-    </div>
-    <div class="setup-buttons">
-      <button id="add-team-btn" class="btn secondary">+ Add team</button>
-      <button id="start-game-btn" class="btn primary">Start Game</button>
-    </div>
-    <details class="rules-details">
-      <summary>How to play (rules)</summary>
-      <ol>
-        <li>Split the class into 2–4 teams.</li>
-        <li>Watch the turn banner above the board — it always shows whose turn it is to pick a category and a point value.</li>
-        <li>Read the question out loud. The team has a short time to answer.</li>
-        <li>Press "Show Answer" to reveal the correct sentence.</li>
-        <li>Award the points to the team that answered correctly (or to whichever team answers correctly if the first team was wrong).</li>
-        <li>Just like real Jeopardy: the team that answers correctly keeps control and picks the next question. If no one gets it, the turn passes to the next team.</li>
-        <li>The question then disappears from the board.</li>
-        <li>The game ends when all 20 questions have been played. The team with the most points wins.</li>
-      </ol>
-    </details>
-  </section>
+  <main>
+    <a class="game-card" href="jeopardy/index.html">
+      <div class="icon">🎓</div>
+      <h2>Grammar Jeopardy</h2>
+      <p>Teams pick a category and a point value, then answer grammar challenges to win points.</p>
+      <span class="play">Play →</span>
+    </a>
 
-  <!-- GAME SCREEN -->
-  <section id="game-screen" class="screen hidden">
-    <div class="scoreboard" id="scoreboard"></div>
-
-    <p class="turn-indicator" id="turn-indicator"></p>
-
-    <div class="board-wrapper">
-      <div class="board" id="board"></div>
-    </div>
-
-    <div class="game-controls">
-      <button id="reset-game-btn" class="btn secondary">Restart game</button>
-    </div>
-  </section>
-
-  <!-- QUESTION MODAL -->
-  <div id="question-modal" class="modal hidden">
-    <div class="modal-content">
-      <p class="modal-category" id="modal-category"></p>
-      <p class="modal-points" id="modal-points"></p>
-      <p class="modal-question" id="modal-question"></p>
-
-      <button id="show-answer-btn" class="btn primary">Show Answer</button>
-
-      <div id="answer-block" class="hidden">
-        <p class="modal-answer-label">Correct answer:</p>
-        <p class="modal-answer" id="modal-answer"></p>
-
-        <div id="award-section">
-          <p class="award-label">Who got it right?</p>
-          <div id="award-buttons" class="award-buttons"></div>
-
-          <button id="no-one-btn" class="btn secondary">No one got it</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FINAL SCORE MODAL -->
-  <div id="final-modal" class="modal hidden">
-    <div class="modal-content">
-      <h2>🏆 Final Score</h2>
-      <div id="final-scores"></div>
-      <button id="play-again-btn" class="btn primary">Play again</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <a class="game-card" href="grammar-detective/index.html">
+      <div class="icon">🕵️</div>
+      <h2>Grammar Detective Agency</h2>
+      <p>The Case of the Missing Debate Trophy — solve grammar clues to clear suspects and catch the thief.</p>
+      <span class="play">Play →</span>
+    </a>
+  </main>
 </body>
 </html>
