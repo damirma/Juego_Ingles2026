@@ -44,6 +44,8 @@ const QUESTIONS = [
 let teams = [];
 let currentCell = null; // { categoryIndex, valueIndex, points, btn }
 let cellsAnswered = 0;
+let cellResolved = false; // guards against double-award / double-close on one question
+let currentTurnIndex = 0; // classic Jeopardy "control": who picks the next question
 const TOTAL_CELLS = CATEGORIES.length * VALUES.length;
 
 const setupScreen = document.getElementById("setup-screen");
@@ -53,6 +55,7 @@ const addTeamBtn = document.getElementById("add-team-btn");
 const startGameBtn = document.getElementById("start-game-btn");
 
 const scoreboardEl = document.getElementById("scoreboard");
+const turnIndicatorEl = document.getElementById("turn-indicator");
 const boardEl = document.getElementById("board");
 const resetGameBtn = document.getElementById("reset-game-btn");
 
@@ -63,6 +66,7 @@ const modalQuestion = document.getElementById("modal-question");
 const showAnswerBtn = document.getElementById("show-answer-btn");
 const answerBlock = document.getElementById("answer-block");
 const modalAnswer = document.getElementById("modal-answer");
+const awardSection = document.getElementById("award-section");
 const awardButtons = document.getElementById("award-buttons");
 const noOneBtn = document.getElementById("no-one-btn");
 
@@ -91,8 +95,10 @@ startGameBtn.addEventListener("click", () => {
     score: 0,
   }));
 
+  currentTurnIndex = 0;
   buildScoreboard();
   buildBoard();
+  updateTurnIndicator();
 
   setupScreen.classList.add("hidden");
   gameScreen.classList.remove("hidden");
@@ -129,6 +135,14 @@ function updateScoreboard() {
   });
 }
 
+function updateTurnIndicator() {
+  teams.forEach((team, i) => {
+    const card = document.getElementById(`score-card-${i}`);
+    if (card) card.classList.toggle("active-turn", i === currentTurnIndex);
+  });
+  turnIndicatorEl.textContent = `👉 ${teams[currentTurnIndex].name}'s turn — pick a category!`;
+}
+
 // ---------- BOARD ----------
 
 function buildBoard() {
@@ -161,6 +175,7 @@ function buildBoard() {
 function openQuestion(categoryIndex, valueIndex, points, cellEl) {
   const item = QUESTIONS[categoryIndex][valueIndex];
   currentCell = { categoryIndex, valueIndex, points, cellEl };
+  cellResolved = false;
 
   modalCategory.textContent = CATEGORIES[categoryIndex];
   modalPoints.textContent = `$${points}`;
@@ -168,6 +183,7 @@ function openQuestion(categoryIndex, valueIndex, points, cellEl) {
   modalAnswer.textContent = item.a;
 
   answerBlock.classList.add("hidden");
+  awardSection.classList.remove("hidden");
   showAnswerBtn.classList.remove("hidden");
 
   buildAwardButtons();
@@ -192,12 +208,24 @@ function buildAwardButtons() {
 }
 
 function awardPoints(teamIndex) {
+  if (cellResolved) return;
+  cellResolved = true;
+  awardSection.classList.add("hidden");
+
   teams[teamIndex].score += currentCell.points;
   updateScoreboard();
+  currentTurnIndex = teamIndex; // classic Jeopardy rule: correct answer keeps control
+  updateTurnIndicator();
   closeQuestion();
 }
 
 noOneBtn.addEventListener("click", () => {
+  if (cellResolved) return;
+  cellResolved = true;
+  awardSection.classList.add("hidden");
+
+  currentTurnIndex = (currentTurnIndex + 1) % teams.length; // pass control to the next team
+  updateTurnIndicator();
   closeQuestion();
 });
 

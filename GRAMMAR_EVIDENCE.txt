@@ -14,13 +14,16 @@ in teams.
 3. INSTRUCTIONS / RULES
 -------------------------
 1. Split the class into 2 to 4 teams.
-2. Teams take turns choosing a category and a point value (100-500) from
-   the board.
+2. The turn banner above the board always shows whose turn it is to pick
+   a category and a point value (100-500).
 3. Read the question out loud. The team has a short time to answer.
 4. Press "Show Answer" to reveal the correct sentence.
 5. Award the points to the team that answered correctly.
-6. The question then disappears from the board.
-7. The game ends when all 20 questions have been played. The team with
+6. Just like real Jeopardy: the team that answers correctly keeps
+   control and picks the next question. If no one gets it, control
+   passes to the next team.
+7. The question then disappears from the board.
+8. The game ends when all 20 questions have been played. The team with
    the most points wins.
 
 4. LIST OF GRAMMAR QUESTIONS / CHALLENGES
