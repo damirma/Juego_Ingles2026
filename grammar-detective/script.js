@@ -11,39 +11,39 @@
 const SUSPECTS = [
   {
     id: "cruz",
-    icon: "🧹",
+    icon: "broom",
     name: "Mr. Cruz",
     role: "School security guard",
     verdict: "cleared",
     verdictText:
-      "✅ CLEARED — The badge scanner confirms Mr. Cruz's location all night: he was at the front gate, not near the trophy.",
+      "CLEARED — The badge scanner confirms Mr. Cruz's location all night: he was at the front gate, not near the trophy.",
   },
   {
     id: "reyes",
-    icon: "🗝️",
+    icon: "old-key",
     name: "Ms. Reyes",
     role: "School secretary, keeper of the keys",
     verdict: "cleared",
     verdictText:
-      "✅ CLEARED — The master keys never left their locked box that night. Ms. Reyes had no way to open the trophy case.",
+      "CLEARED — The master keys never left their locked box that night. Ms. Reyes had no way to open the trophy case.",
   },
   {
     id: "tom",
-    icon: "📚",
+    icon: "books",
     name: "Tom",
     role: "New exchange student",
     verdict: "cleared",
     verdictText:
-      "✅ CLEARED — Tom stopped visiting the library two weeks ago and wasn't even in the building that night.",
+      "CLEARED — Tom stopped visiting the library two weeks ago and wasn't even in the building that night.",
   },
   {
     id: "diana",
-    icon: "🎒",
+    icon: "backpack",
     name: "Diana",
     role: "Rival team captain (Lincoln High)",
     verdict: "suspicious",
     verdictText:
-      "⚠️ SUSPICIOUS — Diana broke her own routine that night, and she's the only visiting student who could have known the trophy's new location.",
+      "SUSPICIOUS — Diana broke her own routine that night, and she's the only visiting student who could have known the trophy's new location.",
   },
 ];
 
@@ -52,7 +52,7 @@ const CULPRIT_ID = "diana";
 const ACCUSATION_FEEDBACK = {
   diana: {
     correct: true,
-    text: "🎉 Case closed! It was Diana. She used to leave right after practice, but that night she stayed very late. She also toured the building recently, so she knew the trophy had been moved to the library — something most visiting teams didn't use to know. Everyone else has a confirmed alibi.",
+    text: "Case closed! It was Diana. She used to leave right after practice, but that night she stayed very late. She also toured the building recently, so she knew the trophy had been moved to the library — something most visiting teams didn't use to know. Everyone else has a confirmed alibi.",
   },
   cruz: {
     correct: false,
@@ -255,11 +255,11 @@ function buildSuspectsPanel() {
     row.className = "suspect-mini";
     row.id = `suspect-mini-${s.id}`;
     row.innerHTML = `
-      <span class="icon">${s.icon}</span>
+      <span class="icon">${emoji(s.icon)}</span>
       <div class="info">
         <div class="name">${escapeHtml(s.name)}</div>
         <div class="role">${escapeHtml(s.role)}</div>
-        <span class="status-badge unknown" id="status-badge-${s.id}">❓ Unknown</span>
+        <span class="status-badge unknown" id="status-badge-${s.id}">${emoji("question")} Unknown</span>
       </div>
     `;
     suspectsList.appendChild(row);
@@ -274,10 +274,13 @@ function maybeRevealVerdict(suspectId) {
   const badge = document.getElementById(`status-badge-${suspectId}`);
   if (badge) {
     badge.className = `status-badge ${suspect.verdict}`;
-    badge.textContent = suspect.verdict === "cleared" ? "✅ Cleared" : "⚠️ Suspicious";
+    badge.innerHTML = verdictLabel(suspect.verdict);
   }
 
-  addToCaseFile({ unlockIcon: "🕵️", unlockText: `VERDICT on ${suspect.name}: ${suspect.verdictText}` });
+  addToCaseFile(
+    "detective",
+    `VERDICT on ${escapeHtml(suspect.name)}: ${verdictIcon(suspect.verdict)} ${escapeHtml(suspect.verdictText)}`
+  );
 }
 
 // ---------- CLUES ----------
@@ -291,7 +294,7 @@ function showClue(index) {
   clueCategory.textContent = clue.category;
   clueQuestion.textContent = clue.question;
   answerText.textContent = clue.answer;
-  unlockText.textContent = `🔎 ${clue.unlockText}`;
+  unlockText.innerHTML = `${emoji("magnifier-right")} ${escapeHtml(clue.unlockText)}`;
 
   answerBlock.classList.add("hidden");
   unlockBlock.classList.add("hidden");
@@ -332,18 +335,19 @@ function unlockClue() {
   awardSection.classList.add("hidden");
 
   const clue = CASE_FILE[currentClueIndex];
-  addToCaseFile({ unlockIcon: "🔓", unlockText: clue.unlockText });
+  addToCaseFile("unlock", escapeHtml(clue.unlockText));
   maybeRevealVerdict(clue.suspectId);
 
   unlockBlock.classList.remove("hidden");
 }
 
-function addToCaseFile(entry) {
+// html must already be escaped
+function addToCaseFile(iconName, html) {
   const emptyNote = caseFileList.querySelector(".empty-note");
   if (emptyNote) emptyNote.remove();
 
   const li = document.createElement("li");
-  li.textContent = `${entry.unlockIcon} ${entry.unlockText}`;
+  li.innerHTML = `${emoji(iconName)} ${html}`;
   caseFileList.appendChild(li);
 }
 
@@ -366,10 +370,10 @@ function openAccusation() {
     const card = document.createElement("div");
     card.className = "suspect-card";
     card.innerHTML = `
-      <span class="icon">${s.icon}</span>
+      <span class="icon">${emoji(s.icon)}</span>
       <div class="name">${escapeHtml(s.name)}</div>
       <div class="role">${escapeHtml(s.role)}</div>
-      <span class="status-badge ${s.verdict}">${s.verdict === "cleared" ? "✅ Cleared" : "⚠️ Suspicious"}</span>
+      <span class="status-badge ${s.verdict}">${verdictLabel(s.verdict)}</span>
     `;
     card.addEventListener("click", () => makeAccusation(s.id));
     accusationSuspects.appendChild(card);
@@ -382,7 +386,7 @@ function makeAccusation(suspectId) {
   if (caseClosed) return;
   const result = ACCUSATION_FEEDBACK[suspectId];
 
-  accusationFeedback.textContent = result.text;
+  accusationFeedback.innerHTML = `${result.correct ? emoji("party") + " " : ""}${escapeHtml(result.text)}`;
   accusationFeedback.className = `accusation-feedback ${result.correct ? "correct" : "wrong"}`;
   accusationFeedback.classList.remove("hidden");
 
@@ -420,12 +424,12 @@ function showFinalScore() {
   bonusSection.classList.add("hidden");
   const sorted = [...teams].sort((a, b) => b.score - a.score);
   finalScores.innerHTML =
-    `<h3>🏆 Final Score</h3>` +
+    `<h3>${emoji("trophy")} Final Score</h3>` +
     sorted
       .map(
         (team, i) => `
       <div class="final-row">
-        <span>${i === 0 ? "🏆 " : ""}${escapeHtml(team.name)}</span>
+        <span>${i === 0 ? emoji("trophy") + " " : ""}${escapeHtml(team.name)}</span>
         <span>${team.score} pts</span>
       </div>
     `
@@ -436,6 +440,19 @@ function showFinalScore() {
 }
 
 // ---------- HELPERS ----------
+
+// OpenMoji image (assets/openmoji/<name>.svg) used instead of system emojis
+function emoji(name) {
+  return `<img class="emoji" src="../assets/openmoji/${name}.svg" alt="">`;
+}
+
+function verdictIcon(verdict) {
+  return emoji(verdict === "cleared" ? "check" : "warning");
+}
+
+function verdictLabel(verdict) {
+  return `${verdictIcon(verdict)} ${verdict === "cleared" ? "Cleared" : "Suspicious"}`;
+}
 
 function escapeHtml(str) {
   const div = document.createElement("div");

@@ -12,7 +12,12 @@ Abre `index.html` (la página de inicio) para elegir un juego, o en línea
 index.html              Página de inicio con enlaces a los juegos
 jeopardy/               Grammar Jeopardy
 grammar-detective/      Grammar Detective Agency
+assets/openmoji/        Íconos OpenMoji (SVG) compartidos por los juegos
 ```
+
+Los íconos son imágenes de [OpenMoji](https://openmoji.org/) (licencia
+CC BY-SA 4.0), guardadas en `assets/openmoji/` para que los juegos
+funcionen sin internet y se vean igual en cualquier dispositivo.
 
 Cada carpeta de juego contiene `index.html`, `style.css`, `script.js` y
 `GRAMMAR_EVIDENCE.txt` (la evidencia requerida para la clase).

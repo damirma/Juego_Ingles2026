@@ -140,7 +140,7 @@ function updateTurnIndicator() {
     const card = document.getElementById(`score-card-${i}`);
     if (card) card.classList.toggle("active-turn", i === currentTurnIndex);
   });
-  turnIndicatorEl.textContent = `👉 ${teams[currentTurnIndex].name}'s turn — pick a category!`;
+  turnIndicatorEl.innerHTML = `${emoji("point-right")} ${escapeHtml(teams[currentTurnIndex].name)}'s turn — pick a category!`;
 }
 
 // ---------- BOARD ----------
@@ -245,14 +245,14 @@ function closeQuestion() {
 function showFinalScore() {
   // game over: no team has the turn anymore
   document.querySelectorAll(".score-card").forEach((card) => card.classList.remove("active-turn"));
-  turnIndicatorEl.textContent = "🏁 Game over!";
+  turnIndicatorEl.innerHTML = `${emoji("checkered-flag")} Game over!`;
 
   const sorted = [...teams].sort((a, b) => b.score - a.score);
   finalScores.innerHTML = sorted
     .map(
       (team, i) => `
       <div class="final-row">
-        <span>${i === 0 ? "🏆 " : ""}${escapeHtml(team.name)}</span>
+        <span>${i === 0 ? emoji("trophy") + " " : ""}${escapeHtml(team.name)}</span>
         <span>${team.score} pts</span>
       </div>
     `
@@ -262,6 +262,11 @@ function showFinalScore() {
 }
 
 // ---------- HELPERS ----------
+
+// OpenMoji image (assets/openmoji/<name>.svg) used instead of system emojis
+function emoji(name) {
+  return `<img class="emoji" src="../assets/openmoji/${name}.svg" alt="">`;
+}
 
 function escapeHtml(str) {
   const div = document.createElement("div");

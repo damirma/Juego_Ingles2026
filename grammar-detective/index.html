@@ -9,7 +9,7 @@
 <body>
 
   <header class="app-header">
-    <h1>🕵️ Grammar Detective Agency</h1>
+    <h1><img class="emoji" src="../assets/openmoji/detective.svg" alt=""> Grammar Detective Agency</h1>
     <p class="subtitle">The Case of the Missing Debate Trophy</p>
   </header>
 
@@ -33,8 +33,8 @@
         <li>Read each grammar clue out loud, one at a time, in order.</li>
         <li>Teams try to answer using the correct grammar. Press "Reveal Answer" to check.</li>
         <li>Award the point to the team that answered correctly (or press "No one got it" — the clue unlocks either way, so the case keeps moving).</li>
-        <li>Press "Next Clue" to continue. Each suspect has 2 clues — once both are revealed, watch the Suspects panel: that suspect turns ✅ Cleared or ⚠️ Suspicious.</li>
-        <li>When all 8 clues are unlocked, only one suspect should still be ⚠️ Suspicious. Click that suspect's card to close the case.</li>
+        <li>Press "Next Clue" to continue. Each suspect has 2 clues — once both are revealed, watch the Suspects panel: that suspect turns <img class="emoji" src="../assets/openmoji/check.svg" alt=""> Cleared or <img class="emoji" src="../assets/openmoji/warning.svg" alt=""> Suspicious.</li>
+        <li>When all 8 clues are unlocked, only one suspect should still be <img class="emoji" src="../assets/openmoji/warning.svg" alt=""> Suspicious. Click that suspect's card to close the case.</li>
         <li>The team that solves the case correctly wins 300 bonus points — but everyone can guess!</li>
       </ol>
     </details>
@@ -65,7 +65,7 @@
             </div>
 
             <div id="unlock-block" class="unlock-block hidden">
-              <p class="unlock-label">🔓 New clue unlocked:</p>
+              <p class="unlock-label"><img class="emoji" src="../assets/openmoji/unlock.svg" alt=""> New clue unlocked:</p>
               <p class="unlock-text" id="unlock-text"></p>
               <button id="next-clue-btn" class="btn primary">Next Clue</button>
             </div>
@@ -75,11 +75,11 @@
 
       <aside class="case-sidebar">
         <div class="sidebar-block">
-          <h3>👥 Suspects</h3>
+          <h3><img class="emoji" src="../assets/openmoji/people.svg" alt=""> Suspects</h3>
           <div id="suspects-list" class="suspects-list"></div>
         </div>
         <div class="sidebar-block">
-          <h3>📋 Case File</h3>
+          <h3><img class="emoji" src="../assets/openmoji/clipboard.svg" alt=""> Case File</h3>
           <ul id="case-file-list" class="case-file-list">
             <li class="empty-note">No clues yet. Solve the first question to begin.</li>
           </ul>
@@ -95,7 +95,7 @@
   <!-- ACCUSATION MODAL -->
   <div id="accusation-modal" class="modal hidden">
     <div class="modal-content wide">
-      <h2>🔍 Who did it?</h2>
+      <h2><img class="emoji" src="../assets/openmoji/magnifier-left.svg" alt=""> Who did it?</h2>
       <p>Review the case file and the suspects, then choose who stole the trophy.</p>
       <div id="accusation-suspects" class="accusation-suspects"></div>
       <div id="accusation-feedback" class="accusation-feedback hidden"></div>
@@ -108,6 +108,8 @@
       <button id="play-again-btn" class="btn primary hidden">Play again</button>
     </div>
   </div>
+
+  <footer class="credits">Icons: <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a> — CC BY-SA 4.0</footer>
 
   <script src="script.js"></script>
 </body>

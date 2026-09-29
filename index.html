@@ -47,7 +47,12 @@
     transform: translateY(-2px);
     outline: none;
   }
-  .game-card .icon { font-size: 2.5rem; }
+  .game-card .icon img,
+  .emoji { filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.55)); }
+  .game-card .icon img { width: 72px; height: 72px; display: block; }
+  .emoji { width: 1.5em; height: 1.5em; vertical-align: -0.4em; }
+  footer { text-align: center; padding: 24px 16px; color: var(--muted); font-size: 0.85rem; }
+  footer a { color: var(--muted); }
   .game-card h2 { margin: 8px 0 4px; }
   .game-card p { margin: 0; color: var(--muted); line-height: 1.4; }
   .game-card .play { display: inline-block; margin-top: 16px; color: var(--accent); font-weight: 600; }
@@ -55,24 +60,26 @@
 </head>
 <body>
   <header>
-    <h1>🎲 Grammar Games</h1>
+    <h1><img class="emoji" src="assets/openmoji/dice.svg" alt=""> Grammar Games</h1>
     <p>Practice "used to" and the passive voice (present &amp; past)</p>
   </header>
 
   <main>
     <a class="game-card" href="jeopardy/index.html">
-      <div class="icon">🎓</div>
+      <div class="icon"><img src="assets/openmoji/graduation-cap.svg" alt=""></div>
       <h2>Grammar Jeopardy</h2>
       <p>Teams pick a category and a point value, then answer grammar challenges to win points.</p>
       <span class="play">Play →</span>
     </a>
 
     <a class="game-card" href="grammar-detective/index.html">
-      <div class="icon">🕵️</div>
+      <div class="icon"><img src="assets/openmoji/detective.svg" alt=""></div>
       <h2>Grammar Detective Agency</h2>
       <p>The Case of the Missing Debate Trophy — solve grammar clues to clear suspects and catch the thief.</p>
       <span class="play">Play →</span>
     </a>
   </main>
+
+  <footer>Icons: <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a> — CC BY-SA 4.0</footer>
 </body>
 </html>
