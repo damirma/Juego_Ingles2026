@@ -252,9 +252,44 @@ body {
   padding: 8px 10px;
 }
 
+.suspect-mini {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .suspect-mini .icon { font-size: 1.4rem; }
 .suspect-mini .name { font-weight: 700; font-size: 0.9rem; }
 .suspect-mini .role { font-size: 0.78rem; color: var(--gray); }
+
+.suspect-mini .info { flex: 1; min-width: 0; }
+
+.status-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.status-badge.unknown {
+  background: rgba(141,127,116,0.25);
+  color: var(--gray);
+}
+
+.status-badge.cleared {
+  background: rgba(63,165,104,0.2);
+  color: var(--green);
+}
+
+.status-badge.suspicious {
+  background: rgba(217,74,43,0.2);
+  color: var(--accent);
+}
+
+.suspect-card .status-badge { margin-top: 8px; }
 
 .case-file-list {
   list-style: none;

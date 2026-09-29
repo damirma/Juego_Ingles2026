@@ -8,88 +8,104 @@ Grammar Detective Agency: The Case of the Missing Debate Trophy
 2. GAME OBJECTIVE
 ------------------
 Practice and demonstrate the correct use of "used to" and the passive voice
-(present and past) by solving a mystery. Players answer grammar clues to
-unlock evidence about a stolen trophy, then use everything they learned to
-accuse the correct suspect.
+(present and past) by solving a mystery through deduction. Each of the 4
+suspects has exactly 2 grammar clues tied to them. Answering both of a
+suspect's clues correctly reveals whether that suspect is CLEARED (has an
+alibi) or stays SUSPICIOUS. Only one suspect remains suspicious after all
+8 clues — players must identify that suspect to close the case.
 
 3. INSTRUCTIONS / RULES
 -------------------------
 1. Split the class into 2 to 4 detective teams.
 2. Read the case introduction and the list of suspects out loud.
-3. Read each grammar clue out loud, one at a time, in order (8 clues total).
+3. Read each grammar clue out loud, one at a time, in order (8 clues total,
+   2 per suspect).
 4. Teams try to answer using the correct grammar. Press "Reveal Answer" to
    check.
 5. Award the point to the team that answered correctly (or press "No one
    got it" — the clue unlocks either way, so the case keeps moving and no
    team is stuck).
-6. Press "Next Clue" to continue until all 8 clues are unlocked.
-7. When the case file is complete, review the suspects and the evidence
-   together, then choose who committed the theft.
+6. Press "Next Clue" to continue. Once BOTH of a suspect's clues are
+   unlocked, that suspect's badge in the Suspects panel updates to
+   ✅ Cleared or ⚠️ Suspicious.
+7. When all 8 clues are unlocked, only one suspect should still be
+   ⚠️ Suspicious. Click that suspect's card in the final screen to accuse
+   them and close the case.
 8. The team that solves the case correctly wins bonus points, but everyone
    is invited to guess.
 
 4. LIST OF GRAMMAR QUESTIONS / CHALLENGES
 -------------------------------------------
 
-CLUE 1 — USED TO (affirmative)
-  Complete the sentence with 'used to': Every night, the security guard,
-  Mr. Cruz, ______ (walk) past the library at exactly 9:00 PM. Last month,
-  the school changed his schedule to 7:00 PM instead.
+CLUE 1 — Mr. Cruz — USED TO (affirmative)
+  Complete with 'used to': Every night, Mr. Cruz ______ (lock) the front
+  gate at exactly 9:00 PM, and the security camera confirms he did
+  exactly that again this time.
 
-CLUE 2 — USED TO (negative)
-  Rewrite in the negative form: "Diana used to leave right after her own
-  team's practice."
+CLUE 2 — Ms. Reyes — PASSIVE VOICE, PRESENT
+  Change to passive voice: "The school keeps every master key inside a
+  fingerprint-locked box in Ms. Reyes' office."
 
-CLUE 3 — PASSIVE VOICE, PRESENT
-  Change to passive voice: "Ms. Reyes keeps all the master keys in her
-  office."
-
-CLUE 4 — PASSIVE VOICE, PRESENT
-  Complete with the correct passive form: "The library doors ______
-  (lock) automatically at 8:00 PM."
-
-CLUE 5 — PASSIVE VOICE, PAST
-  Change to passive voice: "Somebody moved the trophy from the front hall
-  to the library last week."
-
-CLUE 6 — PASSIVE VOICE, PAST
-  Find and correct the mistake: "The security camera were turned off five
-  minutes before the theft."
-
-CLUE 7 — MIXED CHALLENGE
+CLUE 3 — Tom — MIXED CHALLENGE
   Choose the correct sentence:
   A) Tom use to borrow books every Friday.
   B) Tom used to borrow books every Friday.
 
-CLUE 8 — MIXED CHALLENGE, FINAL CLUE
-  Complete the final report using BOTH a 'used to' structure and a
-  passive voice structure: "Before the schedule changed, the guard
-  ______ (patrol) the library at 9 PM, and that same night, the trophy
-  ______ (see) for the last time on the shelf."
+CLUE 4 — Diana — USED TO (negative)
+  Rewrite in the negative form: "Diana used to leave right after her own
+  team's practice."
+
+CLUE 5 — Mr. Cruz — PASSIVE VOICE, PRESENT
+  Complete with the correct passive form: "Every guard's location ______
+  (record) automatically by the badge scanner at the front gate."
+
+CLUE 6 — Ms. Reyes — PASSIVE VOICE, PAST
+  Find and correct the mistake: "The key box were not opened at all that
+  night, according to the digital log."
+
+CLUE 7 — Tom — PASSIVE VOICE, PAST
+  Complete with the correct passive form: "Tom ______ (not / see) in the
+  library for the last two weeks, according to the sign-in sheet."
+
+CLUE 8 — Diana — MIXED CHALLENGE, FINAL CLUE
+  Complete using BOTH a 'used to' structure and a passive voice
+  structure: "Most visiting teams ______ (not / know) about the trophy's
+  new spot, because it ______ (move) to the library only last week — but
+  Diana had just toured the building."
 
 FINAL QUESTION — Who did it?
   Choose the culprit from the four suspects: Mr. Cruz (security guard),
-  Diana (rival team captain), Ms. Reyes (school secretary), Tom (new
-  exchange student).
+  Ms. Reyes (school secretary), Tom (new exchange student), Diana (rival
+  team captain).
 
 5. ANSWER KEY
 --------------
 
-CLUE 1: used to walk
-CLUE 2: Diana didn't use to leave right after her own team's practice.
-CLUE 3: All the master keys are kept in her office by Ms. Reyes.
-CLUE 4: are locked
-CLUE 5: The trophy was moved from the front hall to the library last
-        week.
-CLUE 6: The security camera was turned off five minutes before the
-        theft.
-CLUE 7: B — Tom used to borrow books every Friday.
-CLUE 8: ...the guard used to patrol the library at 9 PM, and that same
-        night, the trophy was seen for the last time on the shelf.
+CLUE 1: used to lock
+CLUE 2: Every master key is kept inside a fingerprint-locked box in
+        Ms. Reyes' office.
+CLUE 3: B — Tom used to borrow books every Friday.
+CLUE 4: Diana didn't use to leave right after her own team's practice.
+CLUE 5: is recorded
+CLUE 6: The key box was not opened at all that night, according to the
+        digital log.
+CLUE 7: was not seen
+CLUE 8: didn't use to know / was moved
 
-FINAL ANSWER: Diana. She used to leave right after practice but stayed
-late the night of the theft, and she knew Mr. Cruz's OLD 9 PM patrol
-schedule — the same time slot he no longer covers.
+SUSPECT VERDICTS (revealed automatically once both of a suspect's clues
+are unlocked):
+  Mr. Cruz  -> CLEARED  (Clues 1 + 5: his location is confirmed all
+              night by the badge scanner).
+  Ms. Reyes -> CLEARED  (Clues 2 + 6: the only keys that open the case
+              never left their locked box that night).
+  Tom       -> CLEARED  (Clues 3 + 7: he hadn't set foot in the library
+              for two weeks).
+  Diana     -> SUSPICIOUS (Clues 4 + 8: she broke her own routine that
+              night, and she is the only visiting student who could have
+              known the trophy's new location).
+
+FINAL ANSWER: Diana. She is the only suspect who stays SUSPICIOUS once
+all 8 clues are revealed — everyone else has a grammar-confirmed alibi.
 
 6. EVIDENCE OF AI USE
 -----------------------
@@ -97,12 +113,17 @@ AI tool used: Claude (Cowork / Claude Code)
 How it was used:
   - Brainstormed and structured the mystery/detective game concept as an
     alternative format to a traditional Jeopardy-style game.
+  - Designed the deduction logic: pairing every suspect with exactly two
+    grammar clues, so each suspect gets cleared or stays suspicious based
+    on the grammar the players themselves produce.
   - Generated the full case story, the four suspects, and the 8 grammar
     clues covering "used to" and the passive voice in present and past
     tense.
   - Wrote the HTML, CSS and JavaScript code that runs the interactive
-    game (team setup, case file, clue reveal, scoring, suspect lineup,
-    and final accusation).
+    game (team setup, live suspect status, case file, clue reveal,
+    scoring, and final accusation), then tested the full playthrough
+    with an automated browser (Playwright/Chrome) to confirm there were
+    no bugs before submitting.
   - Helped prepare the deployment to GitHub Pages alongside the group's
     other game.
 [Attach screenshots of the chat/session here before submitting.]
@@ -113,20 +134,22 @@ what we learned in class before including it in the final game.
 7. GRAMMAR JUSTIFICATION
 --------------------------
 This game practices "used to" and the passive voice by requiring players
-to actively produce and correct both structures in order to move the
-story forward, rather than simply recognizing them. Clues 1 and 2 cover
-the affirmative and negative forms of "used to" (used to + base verb,
-didn't use to + base verb), which describe past habits that contrast
-with the present — exactly the meaning the story depends on (a guard's
-OLD schedule, a suspect's OLD routine). Clues 3–6 require transforming
-active sentences into passive ones (is/are + past participle for the
-present, was/were + past participle for the past) and correcting a
-common subject-verb agreement mistake in the passive ("were" vs "was").
-Clue 7 asks players to distinguish the correct "used to" form from a
-common learner error ("use to" vs "used to"), and Clue 8, the final
-clue, requires combining both a "used to" structure and a passive voice
-structure in a single sentence, mirroring how these forms are actually
-used together in real narration. Because every clue requires producing a
-full correct sentence or spotting and fixing an error before the story
-can continue, the game goes beyond memorization and tests real
-understanding of both grammar topics.
+to actively produce and correct both structures in order to clear or
+incriminate a suspect, rather than simply recognizing them. Clues 1 and 4
+cover the affirmative and negative forms of "used to" (used to + base
+verb, didn't use to + base verb), which describe past habits that
+contrast with a break in routine — exactly the reasoning the mystery
+depends on (Mr. Cruz's routine held up, Diana's routine broke). Clues 2,
+5, 6 and 7 require transforming active sentences into passive ones
+(is/are + past participle for the present, was/were + past participle
+for the past) and correcting a common subject-verb agreement mistake in
+the passive ("were" vs "was"). Clue 3 asks players to distinguish the
+correct "used to" form from a common learner error ("use to" vs "used
+to"), and Clue 8, the final clue, requires combining both a "used to"
+structure and a passive voice structure in a single sentence, mirroring
+how these forms are actually used together in real narration. Because
+every clue requires producing a full correct sentence or spotting and
+fixing an error before a suspect's status can be resolved, and because
+the final accusation only makes sense if all 8 clues were understood
+correctly, the game goes beyond memorization and tests real
+understanding of both grammar topics through genuine deduction.

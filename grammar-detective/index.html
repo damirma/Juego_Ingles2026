@@ -33,8 +33,8 @@
         <li>Read each grammar clue out loud, one at a time, in order.</li>
         <li>Teams try to answer using the correct grammar. Press "Reveal Answer" to check.</li>
         <li>Award the point to the team that answered correctly (or press "No one got it" — the clue unlocks either way, so the case keeps moving).</li>
-        <li>Press "Next Clue" to continue until all 8 clues are unlocked.</li>
-        <li>When the case file is complete, look at the suspects and the evidence together, then choose who committed the theft.</li>
+        <li>Press "Next Clue" to continue. Each suspect has 2 clues — once both are revealed, watch the Suspects panel: that suspect turns ✅ Cleared or ⚠️ Suspicious.</li>
+        <li>When all 8 clues are unlocked, only one suspect should still be ⚠️ Suspicious. Click that suspect's card to close the case.</li>
         <li>The team that solves the case correctly wins bonus points — but everyone can guess!</li>
       </ol>
     </details>
@@ -58,9 +58,11 @@
             <p class="answer-label">Correct answer:</p>
             <p class="answer-text" id="answer-text"></p>
 
-            <p class="award-label">Which team got it right?</p>
-            <div id="award-buttons" class="award-buttons"></div>
-            <button id="no-one-btn" class="btn secondary">No one got it</button>
+            <div id="award-section">
+              <p class="award-label">Which team got it right?</p>
+              <div id="award-buttons" class="award-buttons"></div>
+              <button id="no-one-btn" class="btn secondary">No one got it</button>
+            </div>
 
             <div id="unlock-block" class="unlock-block hidden">
               <p class="unlock-label">🔓 New clue unlocked:</p>
